@@ -13,5 +13,12 @@ public class Main {
         System.out.println(cita1.confirmar());
         System.out.println("--- Citas del dia ---");
         agenda.mostrarCitas();
+        System.out.println("--- Cancelacion ---");
+        System.out.println(agenda.cancelarCitaPorCliente("Mateo"));
+        System.out.println(agenda.cancelarCitaPorCliente("Sofia"));
+
+        System.out.println("--- Citas actualizadas ---");
+        agenda.mostrarCitas();
+        System.out.println(agenda.cancelarCitaPorCliente("Carlos"));
     }
 }

@@ -18,7 +18,13 @@ public class Agenda {
         }
         return null;
     }
-
+    public String cancelarCitaPorCliente(String nombreCliente) {
+        Cita encontrada = buscarPorCliente(nombreCliente);
+        if (encontrada == null) {
+            return "No se encontro ninguna cita para: " + nombreCliente + ".";
+        }
+        return encontrada.cancelar();
+    }
     public void mostrarCitas() {
         if (citas.isEmpty()) {
             System.out.println("No hay citas registradas en la agenda.");
