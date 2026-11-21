@@ -3,7 +3,8 @@ package src;
 public class Cita {
     public enum Estado {
         PENDIENTE,
-        CONFIRMADA
+        CONFIRMADA,
+        CANCELADA
     }
 
     private final String cliente;
@@ -18,6 +19,14 @@ public class Cita {
         this.estado = Estado.PENDIENTE;
     }
 
+    public String getCliente() {
+        return cliente;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
     public String confirmar() {
         this.estado = Estado.CONFIRMADA;
         return "Confirmacion enviada a " + cliente +
@@ -25,7 +34,13 @@ public class Cita {
                " esta " + estado + ".";
     }
 
-    public Estado getEstado() {
-        return estado;
+    public String cancelar() {
+        this.estado = Estado.CANCELADA;
+        return "Cita cancelada para " + cliente +
+               " (" + servicio + " - " + fechaHora + ").";
+    }
+
+    public String resumen() {
+        return cliente + " | " + servicio + " | " + fechaHora + " | Estado: " + estado;
     }
 }
