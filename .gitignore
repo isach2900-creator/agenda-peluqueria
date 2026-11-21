@@ -1,0 +1,14 @@
+# Archivos compilados y carpetas de salida de Java
+*.class
+*.jar
+bin/
+out/
+target/
+
+# Archivos de registro y temporales
+*.log
+*.tmp
+
+# Archivos del sistema en Windows
+Thumbs.db
+Desktop.ini
